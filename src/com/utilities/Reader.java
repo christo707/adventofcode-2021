@@ -25,6 +25,26 @@ public class Reader {
         return list;
     }
 
+    public static List<Integer>  getInputAsIntegerListFromSingleString(String filename, String seperator) {
+        List<Integer> list = new ArrayList<>();
+        Scanner s = null;
+        try {
+            s = new Scanner(new File(filename));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        if (s!= null) {
+            while (s.hasNextLine()){
+                String[] in = s.nextLine().split(seperator);
+                for(String no: in) {
+                    list.add(Integer.valueOf(no));
+                }
+            }
+            s.close();
+        }
+        return list;
+    }
+
     public static List<String>  getInputAsStringList(String filename) {
         List<String> list = new ArrayList<>();
         Scanner s = null;
