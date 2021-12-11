@@ -62,4 +62,14 @@ public class Reader {
         return list;
     }
 
+    public static int[][] getInputMatrix(List<String> inputAsStringList) {
+        int[][] inputMatrix =  new int[inputAsStringList.size()][inputAsStringList.get(0).length()];
+        for(int i = 0; i < inputAsStringList.size(); i++) {
+            for(int j = 0; j < inputAsStringList.get(i).length(); j++) {
+                inputMatrix[i][j] = Integer.parseInt(String.valueOf(inputAsStringList.get(i).charAt(j)));
+            }
+        }
+        return inputMatrix;
+    }
+
 }
